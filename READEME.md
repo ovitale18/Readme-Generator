@@ -1,7 +1,5 @@
-class MarkDown {
-    static generateReadme(answers){
-        return `
-# ${answers.title}
+
+# HAHA
 
 ## Table of Contents
 - [Project description](#Description)
@@ -12,25 +10,20 @@ class MarkDown {
 - [License](#License)
 
  ## Description
-${answers.description}
+idk
 
  ## Usage
-${answers.usage}
+idk
 
 ## Installation
-${answers.installation}
+idk
 
 ## Contributing
-${answers.contributing}
+undefined
 
 ## Questions
-${answers.email}
-${answers.github}
+idk
+idk
 
 ## License
-${answers.license} 
-`
-    }
-}
-
-module.exports = MarkDown
+mit 

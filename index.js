@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const fs = require('fs')
 const MarkDown = require('./lib/ReadmeGen')
 
 //APP QUESTIONS
@@ -61,8 +62,13 @@ function runQuery() {
     return inquirer.prompt(questions)
     .then((answers) => {
         const mark = MarkDown.generateReadme(answers)
-        console.log(mark)
-        return answers
+        fs.writeFile('READEME.md', mark, function(err){
+            if(err){
+                console.log('Could not save file', err)
+            } else {
+                console.log('Success: new README.md file generated inside the current folder')
+            }
+        })
     })
     .catch((error) => {
         console.log(error)
