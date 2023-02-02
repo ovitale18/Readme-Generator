@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const MarkDown = require('./lib/ReadmeGen')
 
 //APP QUESTIONS
 const questions = [
@@ -59,7 +60,8 @@ const questions = [
 function runQuery() {
     return inquirer.prompt(questions)
     .then((answers) => {
-        console.log(answers)
+        const mark = MarkDown.generateReadme(answers)
+        console.log(mark)
         return answers
     })
     .catch((error) => {
